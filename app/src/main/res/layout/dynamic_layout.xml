@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <AutoCompleteTextView
+        android:id="@+id/etYeniDersAd"
+        android:layout_width="268dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:popupBackground="@color/purple_700"
+        android:textColor="#F57C00"
+        app:layout_constraintEnd_toStartOf="@+id/btnDersSil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spnYeniDersKredi"
+        android:layout_width="142dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#F57C00"
+        android:entries="@array/krediler"
+        android:popupBackground="@color/purple_700"
+        app:layout_constraintEnd_toStartOf="@+id/spnYeniDersNot"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etYeniDersAd"
+        app:layout_constraintTop_toBottomOf="@+id/etYeniDersAd" />
+
+    <Spinner
+        android:id="@+id/spnYeniDersNot"
+        android:layout_width="113dp"
+        android:layout_height="30dp"
+        android:backgroundTint="#F57C00"
+        android:entries="@array/tumNotlar"
+        android:popupBackground="@color/purple_700"
+        app:layout_constraintEnd_toEndOf="@+id/etYeniDersAd"
+        app:layout_constraintTop_toTopOf="@+id/spnYeniDersKredi" />
+
+    <Button
+        android:id="@+id/btnDersSil"
+        android:layout_width="98dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/sub_btn"
+        android:backgroundTint="@color/material_on_background_disabled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/design_default_color_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnYeniDersNot" />
+</androidx.constraintlayout.widget.ConstraintLayout>
