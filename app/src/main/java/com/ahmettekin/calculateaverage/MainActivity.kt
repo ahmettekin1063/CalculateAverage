@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import com.shashank.sony.fancytoastlib.FancyToast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,7 +15,7 @@ import kotlinx.android.synthetic.main.toast_tasarim.view.*
 class MainActivity : AppCompatActivity() {
 
     private val DERSLER = arrayOf("Matematik", "Türkçe", "Fizik", "Edebiyat", "Algoritma", "Tarih")
-    private var tumDerslerinBilgileri = ArrayList<Dersler>()
+    private val tumDerslerinBilgileri = ArrayList<Dersler>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,12 +62,18 @@ class MainActivity : AppCompatActivity() {
                 btnHesapla.visibility = View.VISIBLE
                 sifirla()
 
-            } else FancyToast.makeText(this, "Lütfen Bir Ders Giriniz", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show()
+            } else FancyToast.makeText(
+                this,
+                "Lütfen Bir Ders Giriniz",
+                FancyToast.LENGTH_LONG,
+                FancyToast.ERROR,
+                false
+            ).show()
         }
     }
 
 
-    /* fun ortalamaHesapla(view: View) {
+   /*  fun ortalamaHesapla(view: View) {
 
 
          var toplamKredi = 0
@@ -79,7 +86,7 @@ class MainActivity : AppCompatActivity() {
          }
          Toast.makeText(this, "ortalama: ${toplamNot/toplamKredi}", Toast.LENGTH_SHORT).show()
      }
- */
+*/
     fun sifirla() {
         etDersAd.setText("")
         spnDersKredi.setSelection(0)
@@ -110,7 +117,15 @@ class MainActivity : AppCompatActivity() {
         val toastView = layoutInflater.inflate(R.layout.toast_tasarim, null)
         toastView.textView.text = "ORTALAMA : ${toplamNot / toplamKredi}"
 
-        FancyToast.makeText(this, "ORTALAMA : ${toplamNot / toplamKredi}", FancyToast.LENGTH_LONG, FancyToast.WARNING, R.drawable.ic_baseline_pedal_bike_24,false).show()
+
+        FancyToast.makeText(
+            this,
+            "ORTALAMA : ${toplamNot / toplamKredi}",
+            FancyToast.LENGTH_LONG,
+            FancyToast.WARNING,
+            R.drawable.ic_baseline_pedal_bike_24,
+            false
+        ).show()
 
         tumDerslerinBilgileri.clear()
     }
